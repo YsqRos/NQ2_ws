@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="serial_test" type="serialtest_NQ2" name="serialtest_NQ2" />
+    <include file="$(find joy_ctrl)/launch/joy_turtle.launch"/>
+    <!-- <node name="teleop_keyboard" pkg="keyboard_test" type="hf_teleop_keyboard.py" output="screen" respawn="false"/> -->
+</launch>

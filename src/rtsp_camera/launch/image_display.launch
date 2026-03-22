@@ -1,0 +1,21 @@
+<launch>
+    <!-- 启动RTSP发布节点 -->
+    <node pkg="rtsp_camera" type="rtsp_publisher.py" name="rtsp_publisher" output="screen">
+        <!-- RTSP URL，格式为 rtsp://用户名:密码@IP地址:端口/路径 -->
+        <param name="rtsp_url" value="1"/>
+        <!-- 发布帧率 -->
+        <param name="frame_rate" value="20" />
+    </node>
+
+    <!-- 启动图像显示与保存节点 -->
+    <node pkg="rtsp_camera" type="image_display.py" name="image_display_saver" output="screen">
+        <!-- 图像保存目录 -->
+        <param name="save_dir" value="/home/qxy/catkin_ws/src/rtsp_camera/saved_images" />
+        <!-- 保存频率（每N帧保存一次） -->
+        <param name="save_frequency" value="1" />
+        <!-- 图像显示和保存的像素大小 -->
+        <param name="frame_width" value="1080" />
+        <param name="frame_height" value="720" />
+    </node>
+</launch>
+

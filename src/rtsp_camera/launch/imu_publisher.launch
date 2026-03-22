@@ -1,0 +1,15 @@
+<launch>
+    <!-- 启动 IMU 发布节点 -->
+    <node name="imu_publisher" pkg="rtsp_camera" type="imu_publisher.py" output="screen">
+        <!-- 设置串口参数 -->
+        <param name="port" value="/dev/ttyUSB0"/>
+        <param name="baud" value="9600"/>
+        
+        <!-- 设置节点的日志级别为 info（可选：debug, warn, error） -->
+        <param name="__log_level" value="info"/>
+        
+        <!-- 设置环境变量（确保使用 Python 2） -->
+        <env name="PYTHONUNBUFFERED" value="1"/>
+    </node>
+</launch>
+

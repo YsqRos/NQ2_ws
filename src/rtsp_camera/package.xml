@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rtsp_camera</name>
+  <version>0.0.1</version>
+  <description>ROS RTSP Camera with IMU Integration</description>
+
+  <!-- Maintainer information -->
+  <maintainer email="qxy@todo.todo">qxy</maintainer>
+
+  <!-- License -->
+  <license>BSD</license>
+
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>tf</depend>
+  <depend>message_filters</depend>
+
+  <!-- Export -->
+  <export>
+    <!-- Additional information can be added here -->
+  </export>
+</package>
+

@@ -1,0 +1,19 @@
+# ROS build
+build/
+devel/
+logs/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+
+# VSCode
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# 临时文件
+*.swp
+*.log

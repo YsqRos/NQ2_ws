@@ -1,0 +1,15 @@
+<launch>
+    <!-- <node pkg="rtsp_camera" type="rtsp_publisher.py" name="rtsp_publisher_hongwau" output="screen">
+
+        <param name="rtsp_url" value="rtsp://admin:Admin@123@192.168.1.165:554/Streaming/Channels/101" />
+
+        <param name="frame_rate" value="25" />
+    </node> -->
+    <node pkg="rtsp_camera" type="rtsp_publisher.py" name="rtsp_publisher_kejiangyang" output="screen">
+
+        <param name="rtsp_url" value="rtsp://admin:Admin@123@192.168.1.64:554/h264/ch1/main/av_stream" />
+
+        <param name="frame_rate" value="25" />
+    </node>  
+</launch>
+

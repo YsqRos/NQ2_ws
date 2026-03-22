@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="rtsp_camera" type="gps_publisher.py" name="gps_publisher" output="screen">
+        <!-- 串口设备 -->
+        <param name="port" value="/dev/ttyUSB1"/>
+        <!-- 波特率 -->
+        <param name="baudrate" value="9600"/>
+    </node>
+</launch>
+

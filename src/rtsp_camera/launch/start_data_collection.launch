@@ -1,0 +1,37 @@
+<launch>
+    <!-- 启动 IMU 发布节点 -->
+    <node name="imu_publisher" pkg="rtsp_camera" type="imu_publisher.py" output="screen">
+        <!-- 设置全局参数（去掉波浪号 ~） -->
+        <param name="port" value="/dev/ttyUSB0"/>
+        <param name="baud" value="9600"/>
+        <!-- 设置日志级别为 info -->
+        <param name="__log_level" value="info"/>
+    </node>
+
+    <!-- 启动 RTSP 发布节点 -->
+    <node name="rtsp_publisher" pkg="rtsp_camera" type="rtsp_publisher.py" output="screen">
+        <param name="rtsp_url" value="0"/>
+        <param name="image_topic" value="/rtsp_image"/>
+        <param name="frame_rate" value="15"/>
+        <param name="frame_width" value="1280"/>
+        <param name="frame_height" value="720"/>
+    </node>
+
+    <!-- 启动 GPS 发布节点 -->
+    <node name="gps_publisher" pkg="rtsp_camera" type="gps_publisher.py" output="screen">
+        <param name="port" value="/dev/ttyUSB1"/>
+        <param name="baudrate" value="9600"/>
+    </node>
+
+    <!-- 启动数据保存节点 (makedata.py) -->
+    <node name="makedata" pkg="rtsp_camera" type="makedata.py" output="screen">
+        <param name="rtsp_url" value="rtsp://admin:123456@192.168.0.125:554/stream1"/>
+        <param name="image_topic" value="/rtsp_image"/>
+        <param name="imu_topic" value="/wit/imu"/>
+        <param name="gps_topic" value="/gps_bd09/fix"/>
+        <param name="bag_path" value="/media/qxy/a7c9ae8e-7830-4ff4-a52e-b6e82b291161/data/"/>
+        <!-- 设置 makedata 节点的日志级别为 info -->
+        <param name="__log_level" value="info"/>
+    </node>
+</launch>
+	
