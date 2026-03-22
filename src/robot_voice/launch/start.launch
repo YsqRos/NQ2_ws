@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="robot_voice" type="iat_publish" name="iat_publish" output="screen"/>
+    <node pkg="robot_voice" type="voice_control" name="car_control" output="screen"/>
+    <node pkg="robot_voice" type="tts_suBbscribe" name="tts_subscribe" output="screen"/>
+</launch>
